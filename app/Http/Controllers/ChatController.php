@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Repositories\ChatRepository;
 use App\Models\Chat;
 use Illuminate\Http\Request;
+use App\Http\Repositories\ChatRepository;
 
 class ChatController extends Controller
 {
-    public function __construct(ChatRepository $chatRepository)
+    protected $chatRepository;
+
+    public function __construct(chatRepository $ChatRepository)
     {
-        $this->chatRepository = $chatRepository;
+        $this->chatRepository = $ChatRepository;
     }
     /**
      * Display a listing of the resource.

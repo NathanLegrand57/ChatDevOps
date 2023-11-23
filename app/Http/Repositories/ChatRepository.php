@@ -6,7 +6,6 @@ use App\Models\Chat;
 
 class ChatRepository
 {
-    protected $chat;
 
     public function store($request)
     {
@@ -19,4 +18,5 @@ class ChatRepository
 
         $chat->save();
     }
+
 }
