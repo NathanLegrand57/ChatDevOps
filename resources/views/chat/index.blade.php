@@ -42,7 +42,7 @@
             </div>
         </div>
     </div>
-<script src="resources\js\chat.js"></script>
+    <script src="{{ asset('js/chat.js') }}"></script>
 </body>
 
 </html>
