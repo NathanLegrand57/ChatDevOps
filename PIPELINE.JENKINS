@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    stages {
+        stage('Remove old pull') {
+            steps {
+                script {
+                    sh 'rm -r ChatDevOps'
+                }
+            }
+        }
+
+        stage('Github checkout') {
+            steps {
+                script {
+                    sh 'git clone https://github.com/NathanLegrand57/ChatDevOps'
+                }
+            }
+        }
+    }
+}
