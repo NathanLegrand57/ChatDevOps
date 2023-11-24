@@ -19,6 +19,6 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', [ChatController::class, 'index']); //qdiuhqdiuhaziuhdau
+Route::get('/', [ChatController::class, 'index']);
 
 Route::resource('/chat', ChatController::class);
