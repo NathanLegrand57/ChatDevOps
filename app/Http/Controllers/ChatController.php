@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Chat;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Repositories\ChatRepository;
 
@@ -45,6 +46,7 @@ class ChatController extends Controller
     {
         $this->chatRepository->store($request);
         return redirect()->route('chat.index');
+
     }
 
     /**

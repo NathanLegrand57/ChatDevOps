@@ -41,4 +41,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function chats()
+    {
+        return $this->hasMany(Chat::class); // C'est la classe produit qui ira dans vente en tant que produit_id
+    }
 }
