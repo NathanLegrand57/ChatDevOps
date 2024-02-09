@@ -24,6 +24,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::middleware('XSS')->group(function () {
+    Route::resource('/chat', ChatController::class);
+});
+
 Route::middleware('auth')->group(function () {
     Route::resource('/chat', ChatController::class);
 });
