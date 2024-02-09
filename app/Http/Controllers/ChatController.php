@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ChatRequest;
 use App\Models\Chat;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Repositories\ChatRepository;
+use Illuminate\Support\Facades\Auth;
 
 class ChatController extends Controller
 {
@@ -42,7 +44,7 @@ class ChatController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ChatRequest $request)
     {
         $this->chatRepository->store($request);
         return redirect()->route('chat.index');
@@ -91,6 +93,10 @@ class ChatController extends Controller
      */
     public function destroy(Chat $chat)
     {
-        //
+        if (Auth::user()->can('message-delete')) {
+            $chat->delete();
+            return redirect()->route('chat.index');
+        }
+        abort(401);
     }
 }
