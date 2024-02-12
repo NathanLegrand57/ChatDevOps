@@ -16,7 +16,7 @@ class ChatController extends Controller
     public function __construct(chatRepository $ChatRepository)
     {
         $this->chatRepository = $ChatRepository;
-        $this->middleware('XSS');
+        // $this->middleware('XSS');
     }
     /**
      * Display a listing of the resource.

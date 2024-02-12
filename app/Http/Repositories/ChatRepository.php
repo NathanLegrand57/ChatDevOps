@@ -9,7 +9,6 @@ class ChatRepository
 
     public function store($request)
     {
-        // $data = $request->all();
 
         $chat = new Chat;
 
@@ -18,5 +17,6 @@ class ChatRepository
 
         $chat->save();
     }
+    
 
 }

@@ -81,7 +81,7 @@
         // Gérer la soumission du formulaire avec le contenu de l'éditeur Quill
         document.getElementById('chatForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            var editorContent = quill.getText();
+            var editorContent = document.querySelector('.ql-editor').innerHTML;
             document.getElementById('message').value = editorContent;
             this.submit();
         });
